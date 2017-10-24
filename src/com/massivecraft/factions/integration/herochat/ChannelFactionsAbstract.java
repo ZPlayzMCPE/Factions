@@ -1,13 +1,13 @@
-package com.massivecraft.factions.integration.herochat;
+package com.massivecraft.factions.integration.pexchat;
 
-import com.dthielke.herochat.Channel;
-import com.dthielke.herochat.ChannelChatEvent;
-import com.dthielke.herochat.ChannelStorage;
-import com.dthielke.herochat.ChatCompleteEvent;
-import com.dthielke.herochat.Chatter;
-import com.dthielke.herochat.Herochat;
-import com.dthielke.herochat.MessageFormatSupplier;
-import com.dthielke.herochat.MessageNotFoundException;
+import com.dthielke.pexchat.Channel;
+import com.dthielke.pexchat.ChannelChatEvent;
+import com.dthielke.pexchat.ChannelStorage;
+import com.dthielke.pexchat.ChatCompleteEvent;
+import com.dthielke.pexchat.Chatter;
+import com.dthielke.pexchat.Herochat;
+import com.dthielke.pexchat.MessageFormatSupplier;
+import com.dthielke.pexchat.MessageNotFoundException;
 import com.massivecraft.factions.Rel;
 import com.massivecraft.factions.entity.Faction;
 import com.massivecraft.factions.entity.MPlayer;
@@ -30,7 +30,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 {
 	private static final Pattern msgPattern = Pattern.compile("(.*)<(.*)%1\\$s(.*)> %2\\$s");
 	private final ChannelStorage storage = Herochat.getChannelManager().getStorage();
-	private final MessageFormatSupplier formatSupplier = Herochat.getChannelManager();
+	private final MessageFormatSupplier formatSupplier = PexChat.getChannelManager();
 	
 	@Override
 	public boolean addMember(Chatter chatter, boolean announce, boolean flagUpdate)
@@ -41,7 +41,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 		{
 			try
 			{
-				this.announce(Herochat.getMessage("channel_join").replace("$1", chatter.getPlayer().getDisplayName()));
+				this.announce(PexChat.getMessage("channel_join").replace("$1", chatter.getPlayer().getDisplayName()));
 			}
 			catch (MessageNotFoundException e)
 			{
@@ -63,7 +63,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 		{
 			try
 			{
-				announce(Herochat.getMessage("channel_kick").replace("$1", chatter.getPlayer().getDisplayName()));
+				announce(PexChat.getMessage("channel_kick").replace("$1", chatter.getPlayer().getDisplayName()));
 			}
 			catch (MessageNotFoundException e)
 			{
@@ -116,7 +116,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 			Player player = member.getPlayer();
 			MixinMessage.get().messageOne(player, message);
 		}
-		Herochat.logChat(ChatColor.stripColor(message));
+		PexChat.logChat(ChatColor.stripColor(message));
 	}
 
 	@Override
@@ -273,7 +273,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 		for (Player recipient : recipients)
 		{
 			if (recipient.equals(senderPlayer)) continue;
-			if (recipient.hasPermission("herochat.admin.stealth")) continue;
+			if (recipient.hasPermission("pexchat.admin.stealth")) continue;
 			return true;
 		}
 		
@@ -288,7 +288,7 @@ public abstract class ChannelFactionsAbstract implements Channel
 		Iterator<Player> iterator = recipients.iterator();
 		while(iterator.hasNext())
 		{
-			Chatter recipient = Herochat.getChatterManager().getChatter(iterator.next());
+			Chatter recipient = PexChat.getChatterManager().getChatter(iterator.next());
 			if (recipient == null) continue;
 			World recipientWorld = recipient.getPlayer().getWorld();
 			
