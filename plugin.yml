@@ -5,7 +5,7 @@ website: ${project.url}
 description: ${project.description}
 authors: [Cayorion, Madus, Ulumulu1510, MarkehMe, Brettflan]
 depend: [MassiveCore]
-softdepend: [PermissionsEx, Permissions, Essentials, EssentialsChat, HeroChat, iChat, LocalAreaChat, LWC, nChat, ChatManager, AuthMe, Vault, Spout, WorldEdit, WorldGuard, AuthDB, CaptureThePoints, CombatTag]
+softdepend: [PermissionsEx, PexChat, Permissions, Essentials, EssentialsChat, HeroChat, iChat, LocalAreaChat, LWC, nChat, ChatManager, AuthMe, Vault, Spout, WorldEdit, WorldGuard, AuthDB, CaptureThePoints, CombatTag]
 permissions:
 # -------------------------------------------- #
 # THE REAL NODES
