@@ -1,21 +1,21 @@
-package com.massivecraft.factions.integration.herochat;
+package com.massivecraft.factions.integration.PexChat;
 
-import com.dthielke.herochat.ChannelChatEvent;
-import com.dthielke.herochat.Herochat;
+import com.dthielke.PexChat.ChannelChatEvent;
+import com.dthielke.PexChat.PexChat;
 import com.massivecraft.factions.chat.ChatFormatter;
 import com.massivecraft.factions.entity.MConf;
 import com.massivecraft.massivecore.Engine;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 
-public class EngineHerochat extends Engine
+public class EnginePexChat extends Engine
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	private static EngineHerochat i = new EngineHerochat();
-	public static EngineHerochat get() { return i; }
+	private static EnginePexChat i = new EnginePexChat();
+	public static EnginePexChat get() { return i; }
 	
 	// -------------------------------------------- //
 	// ACTIVATE & DEACTIVATE
