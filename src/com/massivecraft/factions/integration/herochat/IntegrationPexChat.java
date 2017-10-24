@@ -1,19 +1,19 @@
-package com.massivecraft.factions.integration.herochat;
+package com.massivecraft.factions.integration.PexChat;
 
 import com.massivecraft.massivecore.Engine;
 import com.massivecraft.massivecore.Integration;
 
-public class IntegrationHerochat extends Integration
+public class IntegrationPexChat extends Integration
 {
 	// -------------------------------------------- //
 	// INSTANCE & CONSTRUCT
 	// -------------------------------------------- //
 	
-	private static IntegrationHerochat i = new IntegrationHerochat();
-	public static IntegrationHerochat get() { return i; }
-	private IntegrationHerochat()
+	private static IntegrationPexChat i = new IntegrationPexChat();
+	public static IntegrationPexChat get() { return i; }
+	private IntegrationPexChat()
 	{
-		this.setPluginName("Herochat");
+		this.setPluginName("PexChat");
 	}
 	
 	// -------------------------------------------- //
@@ -23,7 +23,7 @@ public class IntegrationHerochat extends Integration
 	@Override
 	public Engine getEngine()
 	{
-		return EngineHerochat.get();
+		return EnginePexChat.get();
 	}
 	
 }
