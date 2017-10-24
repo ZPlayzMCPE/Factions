@@ -46,10 +46,10 @@
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>Vault</artifactId>
         </dependency>
-        <!-- Herochat -->
+        <!-- PexChat -->
         <dependency>
-            <groupId>com.dthielke.herochat</groupId>
-            <artifactId>Herochat</artifactId>
+            <groupId>com.dthielke.PexChat</groupId>
+            <artifactId>PexChat</artifactId>
         </dependency>
         <!-- LWC -->
         <dependency>
